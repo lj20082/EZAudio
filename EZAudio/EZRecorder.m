@@ -140,8 +140,8 @@ typedef struct
 //------------------------------------------------------------------------------
 
 - (instancetype)initWithDestinationURL:(NSURL*)url
-                          sourceFormat:(AudioStreamBasicDescription)sourceFormat
-                   destinationFileType:(EZRecorderFileType)destinationFileType
+                        sourceFormat:(AudioStreamBasicDescription)sourceFormat
+                 destinationFileType:(EZRecorderFileType)destinationFileType
 {
     return [self initWithURL:url
                 clientFormat:sourceFormat
@@ -205,8 +205,8 @@ typedef struct
 //------------------------------------------------------------------------------
 
 + (instancetype)recorderWithDestinationURL:(NSURL*)url
-                              sourceFormat:(AudioStreamBasicDescription)sourceFormat
-                       destinationFileType:(EZRecorderFileType)destinationFileType
+                             sourceFormat:(AudioStreamBasicDescription)sourceFormat
+                      destinationFileType:(EZRecorderFileType)destinationFileType
 {
     return [[EZRecorder alloc] initWithDestinationURL:url
                                          sourceFormat:sourceFormat
@@ -314,7 +314,7 @@ typedef struct
     
     //
     // Perform the write
-    //
+    //    
     [EZAudioUtilities checkResult:ExtAudioFileWrite(self.info->extAudioFileRef,
                                                     bufferSize,
                                                     bufferList)

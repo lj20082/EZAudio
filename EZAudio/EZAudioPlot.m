@@ -59,7 +59,9 @@ UInt32 const EZAudioPlotDefaultMaxHistoryBufferLength = 8192;
     self = [super init];
     if (self)
     {
-        [self initPlot];
+//        注释这里，因为会调用到initWithFrame,造成initPlot调用2次，对应代码
+//         self.points = calloc(EZAudioPlotDefaultMaxHistoryBufferLength, sizeof(CGPoint));会造成内存泄漏
+//        [self initPlot];
     }
     return self;
 }

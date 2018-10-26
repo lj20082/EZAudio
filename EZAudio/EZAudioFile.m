@@ -252,8 +252,12 @@ typedef struct
     //
     if (fileExists)
     {
-        [EZAudioUtilities checkResult:ExtAudioFileOpenURL(url, &self.info->extAudioFileRef)
+        OSStatus result = ExtAudioFileOpenURL(url, &self.info->extAudioFileRef);
+        [EZAudioUtilities checkResult:result
                             operation:"Failed to create ExtAudioFileRef"];
+        if (result != noErr) {
+            return NO;
+        }
     }
     else
     {
